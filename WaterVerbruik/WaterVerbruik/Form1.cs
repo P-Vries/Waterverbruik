@@ -42,14 +42,19 @@ namespace WaterVerbruik
             return betaal;
         }
 
+        private void Betaal()
+        {
+            if (rdb00.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief00(double.Parse(txbIn.Text));
+            if (rdb01.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief01(double.Parse(txbIn.Text));
+            if (rdb02.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief02(double.Parse(txbIn.Text));
+        }
+
         //
         //Events
         //
         private void button1_Click(object sender, EventArgs e)
         {
-            if (rdb00.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief00(double.Parse(txbIn.Text));
-            if (rdb01.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief01(double.Parse(txbIn.Text));
-            if (rdb02.Checked) lblOut.Text = "Te betalen bedrag: €" + Tarief02(double.Parse(txbIn.Text));
+            Betaal();
         }
 
     }
